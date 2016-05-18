@@ -1,0 +1,26 @@
+{
+  "name": "meteocons",
+  "version": "0.1.0",
+  "description": "A ready-to-use package (like Font Awesome) for the Meteocons Font",
+  "main": "index.html",
+  "dependencies": {
+    "grunt": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt-contrib-less": "^1.3.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tomlutzenberger/meteocons.git"
+  },
+  "author": {
+    "name": "Tom Lutzenberger",
+    "email": "tomlutzenberger@gmail.com",
+    "web": "http://twitter.com/t0mlutzenberger"
+  },
+  "license": "MIT"
+}
