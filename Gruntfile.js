@@ -11,6 +11,11 @@ module.exports = function(grunt) {
 				tasks: ['less'],
 				options: {},
 			},
+			html: {
+				files: '*.pug',
+				tasks: ['pug'],
+				options: {},
+			}
 		},
 
 		// less task
@@ -19,7 +24,29 @@ module.exports = function(grunt) {
 				options: { },
 				files: {
 					"dist/meteocons.css": "less/meteocons.less",
+				}
+			},
+			production: {
+				options: {
+					compress: true
+				},
+				files: {
 					"dist/meteocons.min.css": "less/meteocons.less"
+				}
+			}
+		},
+
+		// pug task
+		pug: {
+			release: {
+				options: {
+					pretty: true,
+					data: {
+						debug: false
+					}
+				},
+				files: {
+					'index.html': 'index.pug'
 				}
 			}
 		}
@@ -28,6 +55,7 @@ module.exports = function(grunt) {
 	// load and register tasks
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-pug');
 
 	grunt.registerTask('default', ['less']);
 
