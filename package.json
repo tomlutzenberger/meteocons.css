@@ -1,7 +1,7 @@
 {
   "name": "meteocons.css",
   "version": "0.2.0",
-  "description": "A ready-to-use package (like Font Awesome) for the Meteocons Font",
+  "description": "meteocons.css is a small css library for the Meteocons Font made by Alessio Atzeni",
   "main": "index.html",
   "dependencies": {
     "grunt": "^1.0.1"
