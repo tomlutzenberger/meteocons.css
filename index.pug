@@ -1,0 +1,63 @@
+//- Declarations
+- var classes = ['mi','mi-fw','mi-4x']
+-
+  iconList = [ 'sunrise', 'sun', 'moon', 'eclipse', 'mist', 'storm', 'snowflake', 'cloud-sun', 'cloud-moon', 'fog-sun', 'fog-moon',
+    'fog-cloud', 'fog', 'cloud', 'thunder', 'thunder-alt', 'rain', 'rain-heavy', 'wind', 'wind-rain', 'snow', 'snow-alt',
+    'snow-heavy', 'hail', 'clouds', 'thunderstorm', 'thunderstorm-alt', 'sun-filled', 'moon-filled', 'cloud-sun-filled',
+    'cloud-moon-filled', 'cloud-filled', 'thunder-filled', 'rain-filled', 'rain-heavy-filled', 'wind-filled',
+    'wind-rain-filled', 'snow-filled', 'snow-heavy-filled', 'hail-filled', 'clouds-filled', 'thunderstorm-filled',
+    'temperature', 'compass', 'na', 'celsius', 'fahrenheit' ]
+
+mixin icon(name)
+  .panel.panel-default
+    .panel-heading= name
+    .panel-body
+      p
+        i(class=classes class=['mi-'+name])
+      code.center-block= '<i class="mi mi-'+name+'"></i>'
+      br
+
+
+//- Markup
+doctype html
+html(lang="en")
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+
+    title= Meteocons
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet')
+    link(href='dist/meteocons.min.css' rel='stylesheet')
+  body
+
+    div.container
+      div.header.clearfix
+        h3.text-muted Meteocons
+
+      div.jumbotron.text-center
+        h1
+          i.mi.mi-lg.mi-sun
+          | Meteocons
+          i.mi.mi-lg.mi-moon
+        p.lead An easy to use "Font Awesome"-like package for meteorological Icons
+        p
+          a.btn.btn-lg.btn-primary(href='https://github.com/tomlutzenberger/meteocons' target='_blank' role='button') View on Github
+
+      div.row
+        each item in iconList
+          div.col-xs-3.text-center
+            +icon(item)
+
+      footer.navbar.navbar-default
+        .row
+          .col-xs-12.text-center
+            != 'Made by '
+            a(href='https://tomlutzenberger.de' target='_blank') Tom Lutzenberger
+        .row
+          .col-xs-6.text-center
+            != 'Thanks to '
+            a(href='http://www.alessioatzeni.com/meteocons/' target='_blank') Alessio Atzeni
+          .col-xs-6.text-center
+            != 'Inspired by Dave Gandy\'s '
+            a(href='http://fontawesome.io' target='_blank') Font Awesome

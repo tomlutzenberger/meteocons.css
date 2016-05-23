@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 				options: {},
 			},
 			html: {
-				files: '*.pug',
+				files: ['./*.pug', 'tests/*.pug'],
 				tasks: ['pug'],
 				options: {},
 			}
@@ -46,7 +46,8 @@ module.exports = function(grunt) {
 					}
 				},
 				files: {
-					'index.html': 'index.pug'
+					'index.html': 'index.pug',
+					'tests/tests.html': 'tests/tests.pug'
 				}
 			}
 		}

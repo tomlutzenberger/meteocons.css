@@ -1,0 +1,37 @@
+
+section#list
+  .col-xs-12
+    h2.h1 Lists
+    hr
+
+  .col-xs-4
+    h3= 'Regular <ul>'
+    .well
+      ul.mi-ul
+        each icon, index in ['snow-heavy', 'hail', 'temperature', 'rain-heavy-filled', 'wind', 'eclipse']
+          != '<li><i class="mi mi-li mi-'+icon+'"></i> List icons</li>'
+
+
+  .col-xs-4
+    h3= 'Regular <ol>'
+    .well
+      ol.mi-ul
+        each icon, index in ['snow-heavy', 'hail', 'temperature', 'rain-heavy-filled', 'wind', 'eclipse']
+          != '<li><i class="mi mi-li mi-'+icon+'"></i> List icons</li>'
+
+
+
+  .col-xs-4
+    h3= 'Nested'
+    .well
+      ol
+        li
+          | The first nesting...
+          ul.mi-ul
+            each icon, index in ['snow-heavy', 'temperature', 'rain-heavy-filled']
+              != '<li><i class="mi mi-li mi-'+icon+'"></i> List icons</li>'
+        li
+          | ...and the second one.
+          ul.mi-ul
+            each icon, index in ['hail', 'wind', 'eclipse']
+              != '<li><i class="mi mi-li mi-'+icon+'"></i> List icons</li>'

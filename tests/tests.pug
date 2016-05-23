@@ -1,0 +1,46 @@
+//- Declarations
+
+mixin linkList(title, anchor)
+  li
+    a(href='#'+anchor)= title
+
+//- Markup
+doctype html
+html(lang="en")
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1')
+
+    title= Meteocons
+    link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet')
+    link(href='../dist/meteocons.min.css' rel='stylesheet')
+  body
+
+    div.container
+      header.header.clearfix
+        h1.h2.text-muted Tests for Meteocons
+
+        div.well
+          h2.h3= 'Table of Contents'
+          ol
+            +linkList('Headers', 'headers')
+            +linkList('Inline content', 'inline-content')
+            +linkList('Lists', 'list')
+
+        include header-test.pug
+        include inline-content-test.pug
+        include list-test.pug
+
+      footer.navbar.navbar-default
+        .row
+          .col-xs-12.text-center
+            != 'Made by '
+            a(href='https://tomlutzenberger.de' target='_blank') Tom Lutzenberger
+        .row
+          .col-xs-6.text-center
+            != 'Thanks to '
+            a(href='http://www.alessioatzeni.com/meteocons/' target='_blank') Alessio Atzeni
+          .col-xs-6.text-center
+            != 'Inspired by Dave Gandy\'s '
+            a(href='http://fontawesome.io' target='_blank') Font Awesome

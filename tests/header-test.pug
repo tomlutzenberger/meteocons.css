@@ -1,0 +1,17 @@
+
+section#headers
+  .col-xs-12
+    h2.h1 Headers
+    hr
+
+  .col-xs-6
+    h3 Direct
+    .well
+      each icon, index in ['sun', 'moon', 'thunderstorm-filled', 'clouds', 'wind-filled', 'compass']
+        != '<h'+(index+1)+'><i class="mi mi-'+icon+'"></i> Header H'+(index+1)+'</h'+(index+1)+'>'
+
+  .col-xs-6
+    h3= 'As <small>'
+    .well
+      each icon, index in ['sun', 'moon', 'thunderstorm-filled', 'clouds', 'wind-filled', 'compass']
+        != '<h'+(index+1)+'>Header H'+(index+1)+' <small><i class="mi mi-'+icon+'"></i></small></h'+(index+1)+'>'
