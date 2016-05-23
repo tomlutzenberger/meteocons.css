@@ -1,6 +1,6 @@
 {
-  "name": "meteocons",
-  "version": "0.1.0",
+  "name": "meteocons.css",
+  "version": "0.2.0",
   "description": "A ready-to-use package (like Font Awesome) for the Meteocons Font",
   "main": "index.html",
   "dependencies": {
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tomlutzenberger/meteocons.git"
+    "url": "https://github.com/tomlutzenberger/meteocons.css.git"
   },
   "author": {
     "name": "Tom Lutzenberger",

@@ -26,21 +26,24 @@ html(lang="en")
     meta(http-equiv='X-UA-Compatible' content='IE=edge')
     meta(name='viewport' content='width=device-width, initial-scale=1')
 
-    title= Meteocons
+    title= 'meteocons.css v0.2.0'
     link(href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css' rel='stylesheet')
     link(href='dist/meteocons.min.css' rel='stylesheet')
   body
 
     div.container
       div.header.clearfix
-        h3.text-muted Meteocons
+        h3.text-muted= 'meteocons.css v0.2.0'
 
       div.jumbotron.text-center
         h1
           i.mi.mi-lg.mi-sun
-          | Meteocons
+          | meteocons.css
           i.mi.mi-lg.mi-moon
-        p.lead An easy to use "Font Awesome"-like package for meteorological Icons
+        p.lead
+          | An easy to use "Font Awesome"-like package for meteorological Icons.
+        p
+          | Free to use for everyone.
         p
           a.btn.btn-lg.btn-primary(href='https://github.com/tomlutzenberger/meteocons' target='_blank' role='button') View on Github
 
