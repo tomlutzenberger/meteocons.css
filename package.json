@@ -1,12 +1,13 @@
 {
   "name": "meteocons.css",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "meteocons.css is a small css library for the Meteocons Font made by Alessio Atzeni",
   "main": "index.html",
   "dependencies": {
     "grunt": "^1.0.1"
   },
   "devDependencies": {
+    "grunt-contrib-csslint": "^1.0.0",
     "grunt-contrib-less": "^1.3.0",
     "grunt-contrib-pug": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0"

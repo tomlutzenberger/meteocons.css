@@ -1,4 +1,4 @@
-# meteocons.css v0.2.0
+# meteocons.css v0.2.1
 meteocons.css is a small css library for the Meteocons Font made by [Alessio Atzeni](http://www.alessioatzeni.com/meteocons/).
 It comes with currently 47 weather icons.
 
@@ -45,6 +45,7 @@ This library is published under the **MIT License** and can be used for any comm
 
 
 ## Changelog
+- v0.2.1 - Updated Bootstrap, added linting, harmonized coding style
 - v0.2.0 - Second release including overview and frontend tests
 - v0.1.0 - Pre-release with basic implementation, barely tested.
 

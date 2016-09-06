@@ -1,63 +1,79 @@
-module.exports = function(grunt) {
+/*global module:false*/
 
-	grunt.initConfig({
-		pkg: grunt.file.readJSON('package.json'),
+module.exports = function (grunt) {
+  'use strict';
 
-		// watch task
-		watch: {
-			// observe all *.less files, execute less task on change and reload the site
-			less: {
-				files: 'less/*.less',
-				tasks: ['less'],
-				options: {},
-			},
-			html: {
-				files: ['./*.pug', 'tests/*.pug'],
-				tasks: ['pug'],
-				options: {},
-			}
-		},
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
 
-		// less task
-		less: {
-			development: {
-				options: { },
-				files: {
-					"dist/meteocons.css": "less/meteocons.less",
-				}
-			},
-			production: {
-				options: {
-					compress: true
-				},
-				files: {
-					"dist/meteocons.min.css": "less/meteocons.less"
-				}
-			}
-		},
+    watch: {
+      less: {
+        files: 'less/*.less',
+        tasks: ['less']
+      },
+      html: {
+        files: ['./*.pug', 'tests/*.pug'],
+        tasks: ['pug']
+      }
+    },
 
-		// pug task
-		pug: {
-			release: {
-				options: {
-					pretty: true,
-					data: {
-						debug: false
-					}
-				},
-				files: {
-					'index.html': 'index.pug',
-					'tests/tests.html': 'tests/tests.pug'
-				}
-			}
-		}
-	});
+    less: {
+      development: {
+        options: {},
+        files: {
+          "dist/meteocons.css": "less/meteocons.less"
+        }
+      },
+      production: {
+        options: {
+          compress: true
+        },
+        files: {
+          "dist/meteocons.min.css": "less/meteocons.less"
+        }
+      }
+    },
 
-	// load and register tasks
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-contrib-pug');
+    pug: {
+      release: {
+        options: {
+          pretty: true,
+          data: {
+            debug: false
+          }
+        },
+        files: {
+          'index.html': 'index.pug',
+          'tests/tests.html': 'tests/tests.pug'
+        }
+      }
+    },
 
-	grunt.registerTask('default', ['less']);
+    csslint: {
+      options: {
+        csslintrc: '.csslintrc'
+      },
+      strict: {
+        options: {
+          import: 2
+        },
+        src: ['dist/**/*.css']
+      },
+      lax: {
+        options: {
+          import: false
+        },
+        src: ['dist/**/*.css']
+      }
+    }
+  });
+
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-less');
+  grunt.loadNpmTasks('grunt-contrib-pug');
+  grunt.loadNpmTasks('grunt-contrib-csslint');
+
+  grunt.registerTask('default', ['pug', 'less']);
+  grunt.registerTask('lint', ['csslint']);
 
 };
