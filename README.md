@@ -1,4 +1,6 @@
 # meteocons.css v0.2.1
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/tomlutzenberger/meteocons.css.svg)](https://greenkeeper.io/)
 meteocons.css is a small css library for the Meteocons Font made by [Alessio Atzeni](http://www.alessioatzeni.com/meteocons/).
 It comes with currently 47 weather icons.
 
